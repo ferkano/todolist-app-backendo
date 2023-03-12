@@ -11,7 +11,7 @@ const userSchema = new Schema({
   lastname: String,
   passwordHash: String,
 });
-
+console.log("hola");
 userSchema.set("toJSON", {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id;
