@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../schema/User");
 const bcrypt = require("bcrypt");
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
   const { username, name, lastname, password } = req.body;
 
   const saltRounds = 10;
@@ -14,8 +14,7 @@ router.post("/", async (req, res) => {
     .save()
     .then((user) => res.status(202).json(user))
     .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
+      next(err);
     });
 });
 

@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { mongoose } = require("./database");
+const handleError = require("./middleware/handleError");
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({ path: "../.env" });
@@ -21,6 +22,10 @@ console.log("hola", process.env.PORT);
 
 app.use("/api/user", require("./router/user.routes"));
 app.use("/api/login", require("./router/login.routes"));
+
+//ultimos middlewares
+
+app.use(handleError);
 
 //levantando servidor
 const server = app.listen(app.get("port"), () => {
