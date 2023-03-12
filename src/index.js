@@ -18,6 +18,10 @@ app.use(express.json());
 console.log("hola", process.env.PORT);
 
 //Controladores
+
+app.use("/api/user", require("./router/user.routes"));
+app.use("/api/login", require("./router/login.routes"));
+
 //levantando servidor
 const server = app.listen(app.get("port"), () => {
   console.log(`servidor escuchando en el puerto ${app.get("port")}`);
