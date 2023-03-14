@@ -7,3 +7,21 @@ Content-Type: application/json
   "title":"nota",
   "description":"prueba"
 }
+
+###
+GET http://localhost:3001/api/notes HTTP/1.1
+###
+GET http://localhost:3001/api/notes/640fc6965768b012773eb664 HTTP/1.1
+
+###
+
+DELETE http://localhost:3001/api/notes/640fc6965768b012773eb664 HTTP/1.1
+
+###
+PUT http://localhost:3001/api/notes/640fdd97714c28f50b9b8ef1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "title":"nota1",
+  "description":"prueba1"
+}
