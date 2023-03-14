@@ -15,6 +15,7 @@ loginRouter.post("/", async (req, res, next) => {
       error: "invalid user or password",
     });
   }
+
   res.send({
     name: user.name,
     username: user.username,

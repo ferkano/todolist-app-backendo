@@ -37,7 +37,8 @@ Sentry.init({
 
 app.use("/api/user", require("./router/user.routes"));
 app.use("/api/login", require("./router/login.routes"));
-
+app.use("/api/notes", require("./router/notes.routes"));
+//usando sentry
 app.use(Sentry.Handlers.errorHandler());
 
 //ultimos middlewares
