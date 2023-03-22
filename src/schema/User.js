@@ -10,6 +10,12 @@ const userSchema = new Schema({
   name: String,
   lastname: String,
   passwordHash: String,
+  notes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Note",
+    },
+  ],
 });
 console.log("hola");
 

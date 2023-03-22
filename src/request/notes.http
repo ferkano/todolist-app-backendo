@@ -2,14 +2,17 @@
 
 POST http://localhost:3001/api/notes HTTP/1.1
 Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGZiYTQ2ZjdmNjQ3YjVmZjc4OWM4OCIsInVzZXJuYW1lIjoiZmVya2FubyIsImlhdCI6MTY3ODkyNTcwNn0.ons5DpuS3Bn4aERjETa67l5Z1reUmV3hEJFmm26b5BU
 
 {
-  "title":"nota",
+  "title":"sis",
   "description":"prueba"
 }
 
 ###
 GET http://localhost:3001/api/notes HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGZiYTQ2ZjdmNjQ3YjVmZjc4OWM4OCIsInVzZXJuYW1lIjoiZmVya2FubyIsImlhdCI6MTY3ODkyNTcwNn0.ons5DpuS3Bn4aERjETa67l5Z1reUmV3hEJFmm26b5BU
+
 ###
 GET http://localhost:3001/api/notes/640fc6965768b012773eb664 HTTP/1.1
 

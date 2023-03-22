@@ -1,10 +1,16 @@
 const notesRouter = require("express").Router();
 const Notes = require("../schema/Notes");
+const userExtractor = require("../middleware/userExtractor");
+const User = require("../schema/User");
 
-notesRouter.post("/", (req, res, next) => {
+notesRouter.post("/", userExtractor, async (req, res, next) => {
   const { title, description } = req.body;
 
-  const notes = new Notes({ title, description });
+  const { userId } = req;
+
+  const user = await User.findById(userId);
+
+  const notes = new Notes({ title, description, user: user._id });
 
   notes
     .save()
@@ -14,11 +20,11 @@ notesRouter.post("/", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-notesRouter.get("/", (req, res, next) => {
+notesRouter.get("/", userExtractor, (req, res, next) => {
   Notes.find().then((note) => res.json(note));
 });
 
-notesRouter.get("/:id", async (req, res) => {
+notesRouter.get("/:id", userExtractor, async (req, res) => {
   const id = req.params.id;
   Notes.findById({ _id: id })
     .then((notes) => {
@@ -34,12 +40,12 @@ notesRouter.get("/:id", async (req, res) => {
     });
 });
 
-notesRouter.delete("/:id", (req, res) => {
+notesRouter.delete("/:id", userExtractor, (req, res) => {
   const id = req.params.id;
   Notes.findByIdAndDelete({ _id: id }).then(res.end());
 });
 
-notesRouter.put("/:id", (req, res) => {
+notesRouter.put("/:id", userExtractor, (req, res) => {
   const { id } = req.params;
   const { title, description } = req.body;
 

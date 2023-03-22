@@ -6,6 +6,10 @@ const notesSchema = new Schema({
   title: String,
   description: String,
   date: Date,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 notesSchema.set("toJSON", {
