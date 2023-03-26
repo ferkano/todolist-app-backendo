@@ -11,20 +11,19 @@ notesRouter.post("/", userExtractor, async (req, res, next) => {
   const user = await User.findById(userId);
 
   const notes = new Notes({ title, description, user: user._id });
+  const savedNote = await notes.save();
 
-  notes
-    .save()
-    .then((note) => {
-      res.status(202).json(note);
-    })
-    .catch((err) => next(err));
+  user.notes = user.notes.concat(savedNote._id);
+
+  await user.save();
+  res.json(savedNote);
 });
 
 notesRouter.get("/", userExtractor, (req, res, next) => {
   Notes.find().then((note) => res.json(note));
 });
 
-notesRouter.get("/:id", userExtractor, async (req, res) => {
+notesRouter.get("/:id", userExtractor, async (req, res, next) => {
   const id = req.params.id;
   Notes.findById({ _id: id })
     .then((notes) => {

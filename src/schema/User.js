@@ -17,7 +17,6 @@ const userSchema = new Schema({
     },
   ],
 });
-console.log("hola");
 
 //configurar documentos del mongodb
 userSchema.set("toJSON", {

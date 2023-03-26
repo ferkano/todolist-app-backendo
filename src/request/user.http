@@ -10,4 +10,4 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3001/api/user  HTTP/1.1
+GET http://localhost:3001/api/user/641f5d3848130ea766d66e7f  HTTP/1.1

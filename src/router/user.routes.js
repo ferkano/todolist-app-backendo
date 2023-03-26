@@ -20,6 +20,23 @@ router.post("/", async (req, res, next) => {
 
 router.get("/", (req, res) => {
   User.find({})
+    .populate("notes")
+    .then((data) => res.json(data))
+    .catch((err) => res.json(err));
+});
+
+router.get("/", (req, res) => {
+  User.find({})
+    .populate("notes")
+    .then((data) => res.json(data))
+    .catch((err) => res.json(err));
+});
+
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+
+  User.findById(id)
+    .populate("notes")
     .then((data) => res.json(data))
     .catch((err) => res.json(err));
 });
