@@ -3,8 +3,8 @@ const { Schema, model } = mongoose;
 
 const notesSchema = new Schema({
   title: String,
-  description: String,
   date: Date,
+  status: Boolean,
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",

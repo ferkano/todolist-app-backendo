@@ -2,29 +2,31 @@
 
 POST http://localhost:3001/api/notes HTTP/1.1
 Content-Type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY1ZDM4NDgxMzBlYTc2NmQ2NmU3ZiIsInVzZXJuYW1lIjoiZmVyIiwiaWF0IjoxNjc5NzkwODEyfQ.D7Pryd61gG_-E83U7sYTBIVdnslNg8Lv_4mkwOtaMv4
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY1ZDM4NDgxMzBlYTc2NmQ2NmU3ZiIsInVzZXJuYW1lIjoiZmVyIiwiaWF0IjoxNjgwNjUwMjY2fQ.0UheAwJbL-J077d-zYLT2hDldSVZN2_l1tmhmD0K5kE
 
 {
-  "title":"cuarta",
-  "description":"cuarta"
+  "title":"www"
+  
 }
 
 ###
 GET http://localhost:3001/api/notes/ HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY1ZDM4NDgxMzBlYTc2NmQ2NmU3ZiIsInVzZXJuYW1lIjoiZmVyIiwiaWF0IjoxNjc5NzkwODEyfQ.D7Pryd61gG_-E83U7sYTBIVdnslNg8Lv_4mkwOtaMv4
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY1ZDM4NDgxMzBlYTc2NmQ2NmU3ZiIsInVzZXJuYW1lIjoiZmVyIiwiaWF0IjoxNjgwNjUwMjY2fQ.0UheAwJbL-J077d-zYLT2hDldSVZN2_l1tmhmD0K5kE
 
 ###
 GET http://localhost:3001/api/notes/640fc6965768b012773eb664 HTTP/1.1
 
 ###
 
-DELETE http://localhost:3001/api/notes/640fc6965768b012773eb664 HTTP/1.1
+DELETE http://localhost:3001/api/notes/6422450a33b2e12e4b3b0319 HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY1ZDM4NDgxMzBlYTc2NmQ2NmU3ZiIsInVzZXJuYW1lIjoiZmVyIiwiaWF0IjoxNjc5NzkwODEyfQ.D7Pryd61gG_-E83U7sYTBIVdnslNg8Lv_4mkwOtaMv4
 
 ###
-PUT http://localhost:3001/api/notes/640fdd97714c28f50b9b8ef1 HTTP/1.1
+PUT http://localhost:3001/api/notes/642cc9caab26d8ffb716874c HTTP/1.1
 Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY1ZDM4NDgxMzBlYTc2NmQ2NmU3ZiIsInVzZXJuYW1lIjoiZmVyIiwiaWF0IjoxNjgwNjUwMjY2fQ.0UheAwJbL-J077d-zYLT2hDldSVZN2_l1tmhmD0K5kE
 
 {
-  "title":"nota1",
-  "description":"prueba1"
+  "title":"hola",
+  "status":false
 }
