@@ -48,7 +48,7 @@ app.use(handleError);
 
 //levantando servidor
 const server = app.listen(app.get("port"), () => {
-  console.log("server");
+  console.log(`server ${PORT}`);
 });
 
 module.exports = { app, server };
