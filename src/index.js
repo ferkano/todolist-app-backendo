@@ -9,7 +9,6 @@ const Tracing = require("@sentry/tracing");
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({ path: "../.env" });
 }
-console.log(process.env.MONGODB_URI);
 const app = express();
 
 app.set("port", process.env.PORT);
@@ -46,8 +45,6 @@ app.use(Sentry.Handlers.errorHandler());
 app.use(handleError);
 
 //levantando servidor
-const server = app.listen(app.get("port"), () => {
-  console.log(`servidor escuchando en el puerto ${app.get("port")}`);
-});
+const server = app.listen(app.get("port"), () => {});
 
 module.exports = { app, server };

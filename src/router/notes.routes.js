@@ -22,9 +22,7 @@ notesRouter.post("/", userExtractor, async (req, res, next) => {
 notesRouter.put("/:id", userExtractor, (req, res) => {
   const { id } = req.params;
   const { title, status } = req.body;
-  console.log(title);
   if (title !== undefined) {
-    console.log(status);
     Notes.updateOne({ _id: id }, { $set: { title } })
       .then((resp) => res.json({ title, id }))
       .catch((err) => res.json(err));
