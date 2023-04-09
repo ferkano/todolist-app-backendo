@@ -45,6 +45,8 @@ app.use(Sentry.Handlers.errorHandler());
 app.use(handleError);
 
 //levantando servidor
-const server = app.listen(app.get("port"), () => {});
+const server = app.listen(app.get("port"), () => {
+  console.log("server");
+});
 
 module.exports = { app, server };
