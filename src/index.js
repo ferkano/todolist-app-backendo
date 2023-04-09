@@ -11,7 +11,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 const app = express();
 
-app.set("port", process.env.PORT);
+const PORT = process.env.PORT || 3001;
+
+app.set("port", PORT);
 //configuracion inicial
 app.use(cors());
 app.use(morgan("dev"));
