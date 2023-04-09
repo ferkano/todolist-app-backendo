@@ -26,7 +26,6 @@ loginRouter.post("/", async (req, res, next) => {
   };
 
   //creando token con data y palabra secreta
-  console.log(process.env.KEY_JWT);
   const token = jwt.sign(userForToken, process.env.KEY_JWT);
 
   res.send({
